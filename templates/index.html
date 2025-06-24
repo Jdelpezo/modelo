@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👋📚 Asistente de Lenguaje de Señas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Menú fijo a la izquierda -->
+        <div class="menu">
+            <div class="menu-title">📣 Categorías</div>
+        
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Semilla 🌱</div>
+                <ul class="accordion-content">
+                    <li onclick="loadCategoryVideo('abecedario')">🔤 Abecedario</li>
+                    <li onclick="loadCategoryVideo('colores')">🔤 Colores</li>
+                    <li onclick="loadCategoryVideo('dias_de_la_semana')">🔤 Días de la semana</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion(this)">Brote 🌿</div>
+                <ul class="accordion-content">
+                    <li onclick="loadCategoryVideo('saludos')">🔢 Saludos</li>
+                    <li onclick="loadCategoryVideo('meses_del_año')">🔤 Meses del año</li>
+                    <li onclick="loadCategoryVideo('datos_personales')">🔤 Datos Personales</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion(this)">Árbol 🌳</div>
+                <ul class="accordion-content">
+                    <li onclick="loadCategoryVideo('formas_de_cortesia')">💬 Formas de Cortesía</li>
+                    <li onclick="loadCategoryVideo('palabras_varias')">🔤 Palabras Variadas</li>
+                    <li onclick="loadCategoryVideo('preguntas')">🔤 Preguntas</li>
+                </ul>
+            </div>
+            <div class="menu-footer"> <!-- ✅ Botón abajo -->
+                <button class="back-to-home" onclick="window.location.href='home'">🏠 Volver al Inicio</button>
+            </div>
+        </div>
+        
+        
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <div class="chat-header" onclick="window.location.href='home'" style="cursor: pointer;">
+                🇪🇨🧏‍♀️🤟 Asistente de Lenguaje de Señas
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message assistant-message">¡Hola! ¿Qué te gustaría aprender hoy en Lenguaje de Señas?</div>
+            </div>
+
+        
+            <button class="back-to-home" onclick="window.location.href='/quiz'">🧠 Ir al Quiz</button>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <button class="accessibility-button" onclick="toggleColorBlindMode()">♿️</button>
+</body>
+</html>

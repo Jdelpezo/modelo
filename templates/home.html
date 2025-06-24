@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lenguaje de Señas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="content">
+        <header class="chat-header">👋 Lenguaje de Señas: ¡Comunicación sin Barreras!</header>
+
+        <div class="chat-messages">
+            <section class="message">
+                <p><strong>🤔 ¿Qué es el lenguaje de señas?</strong></p>
+                <p>Es una forma visual de comunicarse usada por personas sordas o con dificultades auditivas. 🧏‍♀️ Se compone de movimientos de manos, expresiones faciales y posturas corporales para transmitir ideas, emociones y palabras.</p>
+            </section>
+
+            <section class="message">
+                <p><strong>🌟 Aspectos importantes del lenguaje de señas:</strong></p>
+                <ul>
+                    <li><strong>1️⃣ Visual y Espacial:</strong> 👀 No se basa en sonidos, sino en gestos que se pueden ver claramente.</li>
+                    <li><strong>2️⃣ Expresiones faciales:</strong> 😲😡😊 Fundamentales para dar contexto emocional y gramatical a lo que se dice.</li>
+                    <li><strong>3️⃣ Gramática propia:</strong> 🧠 No es una traducción literal del lenguaje hablado, tiene estructura propia.</li>
+                    <li><strong>4️⃣ Varía por región:</strong> 🌍 Existen distintos lenguajes de señas como LSA 🇦🇷, ASL 🇺🇸 y LSC 🇨🇱.</li>
+                    <li><strong>5️⃣ Inclusión:</strong> 🤝 Promueve la igualdad, el respeto y la accesibilidad en todos los ámbitos.</li>
+                </ul>
+            </section>
+
+            <section class="message">
+                <p><strong>📚 ¿Por qué deberías aprender lenguaje de señas?</strong></p>
+                <ul>
+                    <li>✅ Mejora la comunicación con personas sordas.</li>
+                    <li>✅ Rompe barreras en educación, salud y trabajo.</li>
+                    <li>✅ Promueve empatía y conciencia social.</li>
+                    <li>✅ Es divertido y útil en muchas situaciones cotidianas.</li>
+                </ul>
+            </section>
+
+            <section class="message">
+                <p><strong>💡 Curiosidades:</strong></p>
+                <ul>
+                    <li>📅 El Día Internacional de las Lenguas de Señas se celebra el 23 de septiembre.</li>
+                    <li>🧏‍♂️ Cada país tiene su propio sistema de señas, ¡no es universal!</li>
+                    <li>📺 Hay intérpretes de señas en televisión para garantizar la accesibilidad.</li>
+                </ul>
+            </section>
+
+            <section class="message">
+                <p><strong>🎯 ¡Tu aprendizaje comienza aquí!</strong></p>
+                <p>Explora videos, juegos interactivos y lecciones prácticas para dominar el lenguaje de señas paso a paso. 🚀</p>
+            </section>
+
+            <button class="back-to-home" onclick="window.location.href='/index'">📖 Comenzar a Aprender</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<button class="accessibility-button" onclick="toggleColorBlindMode()">♿️</button>
+
+</body>
+</html>

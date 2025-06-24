@@ -1,0 +1,362 @@
+/* ------------------------------------ */
+/* 1. Estilos Generales y Estructura Base */
+/* ------------------------------------ */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7f6;
+}
+
+.main-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    height: 95%;
+    display: flex;
+    overflow: hidden;
+}
+
+/* ------------------------------------ */
+/* 2. Menú Lateral */
+/* ------------------------------------ */
+
+.menu {
+    background-color: #2a9df4;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu-title {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.menu-list li:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-list .icon {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.menu-list .text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-content {
+    flex-grow: 1; /* Ocupa el espacio disponible y empuja el footer abajo */
+    overflow-y: auto; /* Opcional: hace scroll si hay muchas categorías */
+}
+
+.menu-footer {
+    margin-top: auto; /* Esto es lo que asegura que esté pegado abajo el botón de volver al inicio xd */
+}
+
+/* Estilos para enlaces del menú */
+
+.menu a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #1f7aa3;
+}
+
+/* ------------------------------------ */
+/* 3. Contenedor Principal (Cabecera + Mensajes) */
+/* ------------------------------------ */
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Cabecera */
+
+.chat-header {
+    background-color: #2a9df4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Contenedor de mensajes */
+
+.chat-messages {
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    min-height: 0;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.assistant-message {
+    background-color: #e1f0ff;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.user-message {
+    background-color: #d1ffd1;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+/* ------------------------------------ */
+/* 4. Video */
+/* ------------------------------------ */
+
+.video-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    flex: none;
+}
+
+#videoContainer {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 600px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#videoContainer video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ------------------------------------ */
+/* 5. Botones */
+/* ------------------------------------ */
+
+/* Botón de volver al inicio */
+
+.back-to-home {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2a9df4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.back-to-home:hover {
+    background-color: #1f7aa3;
+}
+
+/* Botón flotante de accesibilidad */
+
+.accessibility-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2a9df4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.accessibility-button:hover {
+    background-color: #1f7aa3;
+    transform: scale(1.1);
+}
+
+/* ------------------------------------ */
+/* 6. Modo Daltonismo Mejorado */
+/* ------------------------------------ */
+.color-blind-mode .quiz-option {
+    background-color: #000000; /* negro */
+    color: #FFD700;            /* amarillo dorado */
+    border: 2px dashed #FFD700;
+    font-weight: bold;
+}
+
+.color-blind-mode {
+    background-color: #f4f4f4;
+    filter: grayscale(40%) contrast(150%);
+}
+
+.color-blind-mode .menu {
+    background-color: #000000; /* negro */
+}
+
+.color-blind-mode .menu-list li {
+    background-color: #666666; /* gris medio */
+}
+
+.color-blind-mode .menu-list li:hover {
+    background-color: #999999; /* gris claro */
+}
+
+.color-blind-mode .chat-header {
+    background-color: #000000; /* negro */
+    color: #ffffff;
+}
+
+.color-blind-mode .assistant-message {
+    background-color: #ffffff; /* blanco */
+    color: #000000; /* texto negro */
+}
+
+.color-blind-mode .user-message {
+    background-color: #c0c0c0; /* gris claro */
+    color: #000000;
+}
+
+.color-blind-mode .back-to-home {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.color-blind-mode .back-to-home:hover {
+    background-color: #333333;
+}
+
+/* ------------------------------------ */
+/* 7. Acordeón */
+/* ------------------------------------ */
+
+.accordion {
+    margin-top: 10px;
+    color: white;
+    max-height: 400px;          /* Ajusta según tu diseño */
+    overflow-y: auto;
+    padding-right: 5px;         /* Espacio para que el scroll no tape el texto */
+    scroll-behavior: smooth;
+}
+
+.accordion-header {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: scale(1.01);
+}
+
+.accordion-content {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    max-height: none;
+    overflow: visible;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    display: none;
+}
+
+.accordion-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.accordion-content li {
+    padding: 8px 0;
+    cursor: pointer;
+    color: white;
+    transition: color 0.2s;
+}
+
+.accordion-content li:hover {
+    color: #dcefff;
+}
+
+#options button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #2a9df4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#options button:hover {
+    background-color: #1f7aa3;
+}
+

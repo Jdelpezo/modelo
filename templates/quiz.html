@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz de Abecedario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        const questions = {{ questions|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="content">
+            <div class="chat-header">Quiz: Abecedario en Lengua de Señas</div>
+
+            <div class="chat-messages">
+                <div class="quiz-container" style="text-align: center;">
+                    
+                    <!-- ✅ Instrucción visible -->
+                    <p id="question-text" style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+                        ¿Qué letra representa este video?
+                    </p>
+
+                    <!-- Progreso -->
+                    <p id="progress" style="font-size: 18px; font-weight: 500;"></p>
+
+                    <!-- Video -->
+                    <div class="video-container">
+                        <video id="video" controls></video>
+                    </div>
+
+                    <!-- Opciones -->
+                    <div id="options" style="margin-top: 20px; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px;"></div>
+
+                    <!-- Feedback -->
+                    <div id="feedback" style="margin-top: 20px; font-weight: bold; font-size: 18px;"></div>
+
+                    <!-- Botón siguiente -->
+                    <button id="next-button" class="back-to-home" onclick="nextQuestion()" style="display: none;">
+                        ➡️ Pasar a la siguiente pregunta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <button class="accessibility-button" onclick="toggleColorBlindMode()">♿️</button>
+</body>
+</html>
